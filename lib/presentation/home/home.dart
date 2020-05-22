@@ -1,4 +1,5 @@
-import 'package:course_online/presentation/dashboard/dashboard.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:course_online/router/router.gr.dart';
 import 'package:course_online/widgets/icon_with_label.dart';
 import 'package:flutter/material.dart';
 
@@ -29,11 +30,10 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   String title = "Halaman Dashboard";
 
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Dashboard(
-                      buttonText: "Button",
-                    ),
-                  ));
+                  ExtendedNavigator.of(context).pushNamed(
+                    Routes.dashboard,
+                    arguments: DashboardArguments(buttonText: "button ini"),
+                  );
                 },
               ),
             ),

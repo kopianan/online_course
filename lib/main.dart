@@ -1,3 +1,5 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:course_online/router/router.gr.dart';
 import 'package:flutter/material.dart';
 
 import 'presentation/home/home.dart';
@@ -12,6 +14,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.red,
         ),
+        builder: ExtendedNavigator<Router>(router: Router()),
         home: Home());
   }
 }
